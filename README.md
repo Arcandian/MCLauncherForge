@@ -1,43 +1,28 @@
-MCLauncher
-==========
+[EN COURS DE REECRITURE]
 
-English Readme Version
-----------------------
+MCLauncher Forge Edition par Arcandian
+=================================================================================
+Projet original : https://github.com/Kokakiwi/MCLauncher
 
-**MCLauncher** is a custom launcher for Minecraft, destinated to allow Minecraft players to customize his launcher.
+Merci à Kokakiwi pour ce super Launcher !
 
-French Readme Version
----------------------
+=================================================================================
 
-**MCLauncher** est un lanceur customis� de Minecraft, destin� aux joueurs souhaitant rendre leur launcher plus "personnel"
+Cette réedition rajoute principalement la gestion des dossiers générés de Forge API et de Forge Mod Loader,
+ainsi que par d'autres mods.
 
-Changelog
-=========
+Objectifs :
 
-v 1.0.1
------
-* Support de Minecraft Forge Mod Loader.
-* Les dossiers se font (normalement) au bon endroit sous Linux.
+- Effacer automatiquement les dossiers "mods", "coremods", "config" et autres, afin d'éviter des mods doublons,
+des conflits de configuration, etc... le tout, sans manipulation de la part de l'utilisateur, et le minimum de la
+part de l'admin des MAJs ;
+- Donner la possibilité aux admins de configurer, via le fichier de configuration, une liste d'exclusions des dossiers,
+afin de conserver certains paramètres côtés utilisateur (ex : Rei's Minimap dans mods/rei_minimap) ;
 
-v 1.0.0
------
-* Refonte TOTALE
-* Ajout d'un syst�me de th�mes permettant de coder une interface customis�e pour le launcher, avec une API permettant de faire les manipulations du launcher (t�l�chargement, mise � jour, etc...)
+=================================================================================
 
-v 0.9.5
------
-* Offline Mode dans les options
-* Bouton connexion, mettre "Connexion" au lieu de "Login" tout moche :P
-* Choix entre HTTP et HTTPS
-* Modifs de LePlayerFou
-
-v 0.1
------
-* First version.
-* Most code is directly copied from original launcher until I found a better solution.
-* Offline mode isn't present excepted in config file
-
-ToDo List
-=========
-
-* Faire un builder de launcher, permettant de configurer facilement un launcher.
+  Bien sûr, cette petite liste d'objectifs est temporaire et pourrait être amenée à évoluer.
+  
+  Merci encore à Kokakiwi d'avoir crée MCLauncher. Je me suis basé sur la dernière version actuelle qui est la 1.0.1.
+  
+Enjoy !
