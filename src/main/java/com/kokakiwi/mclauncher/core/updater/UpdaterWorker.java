@@ -11,10 +11,23 @@ import com.kokakiwi.mclauncher.api.LauncherAPI;
 import com.kokakiwi.mclauncher.core.Updater.State;
 import com.kokakiwi.mclauncher.utils.SystemUtils;
 
+import com.arcandian.fml.integration.ForgeIntegration;
+
 public class UpdaterWorker
 {
     public static void update(LauncherAPI api)
     {
+    	
+    	try 
+    	{
+    		ForgeIntegration.cleanMods();
+    		javax.swing.JOptionPane.showMessageDialog(null,"Nettoyage des dossiers de mods..."); 
+    	}
+    	catch (final Exception e)
+    	{
+    		e.printStackTrace();
+    	}
+    	
         for (final GameFile file : api.getUpdater().getGameFiles())
         {
             try
@@ -61,8 +74,8 @@ public class UpdaterWorker
         }
         api.getUpdater().setCurrentFile(null);
     }
-    
-    public static void determinePackages(LauncherAPI api)
+
+	public static void determinePackages(LauncherAPI api)
     {
         api.getUpdater().setState(State.DETERMINING_PACKAGES);
         api.getUpdater().setPercentage(5);
