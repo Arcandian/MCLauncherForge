@@ -18,16 +18,6 @@ public class UpdaterWorker
     public static void update(LauncherAPI api)
     {
     	
-    	try 
-    	{
-    		ForgeIntegration.cleanMods();
-    		javax.swing.JOptionPane.showMessageDialog(null,"Nettoyage des dossiers de mods..."); 
-    	}
-    	catch (final Exception e)
-    	{
-    		e.printStackTrace();
-    	}
-    	
         for (final GameFile file : api.getUpdater().getGameFiles())
         {
             try
@@ -40,6 +30,16 @@ public class UpdaterWorker
                 e.printStackTrace();
             }
         }
+          	
+    	try 
+    	{
+    		ForgeIntegration.cleanMods();
+    		javax.swing.JOptionPane.showMessageDialog(null,"Nettoyage des dossiers de mods..."); 
+    	}
+    	catch (final Exception e)
+    	{
+    		e.printStackTrace();
+    	}
         
         // Downloading packages
         api.getUpdater().setState(State.DOWNLOADING);
