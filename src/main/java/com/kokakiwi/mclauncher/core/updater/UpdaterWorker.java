@@ -11,7 +11,7 @@ import com.kokakiwi.mclauncher.api.LauncherAPI;
 import com.kokakiwi.mclauncher.core.Updater.State;
 import com.kokakiwi.mclauncher.utils.SystemUtils;
 
-import com.arcandian.fml.integration.ForgeIntegration;
+import com.arcandian.integration.ForgeIntegration;
 
 public class UpdaterWorker
 {
@@ -34,7 +34,6 @@ public class UpdaterWorker
     	try 
     	{
     		ForgeIntegration.cleanMods();
-    		javax.swing.JOptionPane.showMessageDialog(null,"Nettoyage des dossiers de mods..."); 
     	}
     	catch (final Exception e)
     	{

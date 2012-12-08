@@ -30,7 +30,7 @@ updater:
   additionnals:
   - 'https://dl.dropbox.com/u/41964695/mclauncher/mods.zip'
   versions:
-  - name: 'forge'
+  - name: 'custom'
     source: https://dl.dropbox.com/u/41964695/mclauncher/cversion.txt
     file: 'cversion'
     force: false

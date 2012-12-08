@@ -1,28 +1,31 @@
-package com.arcandian.fml.integration;
+package com.arcandian.integration;
 
 import java.io.File;
 
-import com.kokakiwi.mclauncher.api.LauncherAPI;
+import com.kokakiwi.mclauncher.MCLauncher;
 
 public class ForgeIntegration {
 
-	public static LauncherAPI api;
+	public static MCLauncher main;
 
 	public static void cleanMods() {
 
 		try {
 
-			if (api.getConfig().getStringList("versions.name")
-					.contains("forge")) {
+			if (main.getApi().getConfig().getString("versions.name").contains("forge")) {
 
-				final File mDir = api.getMinecraftDirectory();
+				final File mDir = main.getApi().getMinecraftDirectory();
 				System.out.print(mDir);
 				final File core = new File(mDir.toString() + "/coremods");
+				System.out.print(core.getAbsolutePath().toString());
 				final File mods = new File(mDir.toString() + "/mods");
+				System.out.print(mods.getAbsolutePath().toString());
 				final File config = new File(mDir.toString() + "/config");
+				System.out.print(config.getAbsolutePath().toString());
+				final File modpatches = new File(mDir.toString() + "/modpatches");
+				System.out.print(modpatches.getAbsolutePath().toString());
 
-				System.out
-						.print("Installation avec FML detectee, nettoyage des dossiers avant MAJ...");
+				System.out.print("Installation avec FML detectee, nettoyage des dossiers avant MAJ...");
 
 				if (core.exists()) {
 
@@ -45,6 +48,13 @@ public class ForgeIntegration {
 
 				}
 
+				if (modpatches.exists()) {
+
+					modpatches.delete();
+					System.out.print("Suppression de modpatches...");
+
+				}
+				
 				System.out
 						.print("Suppression effectuee avec succes, lancement...");
 
