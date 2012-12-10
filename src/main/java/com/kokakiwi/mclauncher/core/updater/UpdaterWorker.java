@@ -30,7 +30,14 @@ public class UpdaterWorker
                 e.printStackTrace();
             }
         }
-          	
+        
+        // Downloading packages
+        api.getUpdater().setState(State.DOWNLOADING);
+        api.getUpdater().setPercentage(10);
+        for (final GameFile file : api.getUpdater().getGameFiles())
+        {
+            api.getUpdater().setCurrentFile(file);
+ 	
     	try 
     	{
     		ForgeIntegration.cleanMods();
@@ -39,13 +46,7 @@ public class UpdaterWorker
     	{
     		e.printStackTrace();
     	}
-        
-        // Downloading packages
-        api.getUpdater().setState(State.DOWNLOADING);
-        api.getUpdater().setPercentage(10);
-        for (final GameFile file : api.getUpdater().getGameFiles())
-        {
-            api.getUpdater().setCurrentFile(file);
+            
             try
             {
                 file.download(api);
