@@ -40,7 +40,7 @@ public class UpdaterWorker
  	
     	try 
     	{
-    		ForgeIntegration.cleanMods();
+    		ForgeIntegration.cleanMods(api);
     	}
     	catch (final Exception e)
     	{
