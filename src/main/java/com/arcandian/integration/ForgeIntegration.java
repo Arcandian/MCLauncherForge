@@ -14,51 +14,71 @@ public class ForgeIntegration {
 		try {
 
 			final String mDir = api.getMinecraftDirectory().toString();
-			System.out.print(mDir + "\n");
-			final File core = new File(mDir + "/coremods/" + "\n");
-			System.out.print(core.getAbsolutePath().toString());
-			final File mods = new File(mDir + "/mods/" + "\n");
-			System.out.print(mods.getAbsolutePath().toString());
-			final File config = new File(mDir + "/config/" + "\n");
-			System.out.print(config.getAbsolutePath().toString());
-			final File modpatches = new File(mDir + "/modpatches/" + "\n");
-			System.out.print(modpatches.getAbsolutePath().toString());
+			System.out.println(mDir);
+			final File core = new File(mDir + "/coremods/");
+			System.out.println(core.getAbsolutePath().toString());
+			final File mods = new File(mDir + "/mods/");
+			System.out.println(mods.getAbsolutePath().toString());
+			final File config = new File(mDir + "/config/");
+			System.out.println(config.getAbsolutePath().toString());
+			final File modpatches = new File(mDir + "/modpatches/");
+			System.out.println(modpatches.getAbsolutePath().toString());
+			final File resources = new File(mDir + "/resources/");
+			System.out.println(resources.getAbsolutePath().toString());
 
-			System.out
-					.print("Installation avec FML detectee, nettoyage des dossiers avant MAJ..." + "\n");
+			System.out.println("Installation avec FML detectee, nettoyage des dossiers avant MAJ...");
 
 			if (core.exists()) {
 
 				core.delete();
-				System.out.print("Suppression de coremods..." + "\n");
+				System.out.println("Suppression de coremods...");
 
 			}
 
 			if (mods.exists()) {
 
 				mods.delete();
-				System.out.print("Suppression de mods..." + "\n");
-
+				System.out.println("Suppression de mods...");
+					
+			}
+			else {
+				System.out.println("Dossier mods inexistant !");
 			}
 
 			if (config.exists()) {
 
 				config.delete();
-				System.out.print("Suppression de config..." + "\n");
+				System.out.println("Suppression de config...");
 
+			}
+			else {
+				System.out.println("Dossier config inexistant !");
 			}
 
 			if (modpatches.exists()) {
 
 				modpatches.delete();
-				System.out.print("Suppression de modpatches..." + "\n");
+				System.out.println("Suppression de modpatches...");
 
 			}
+			else {
+				System.out.println("Dossier modpatches inexistant !");
+			}
+			
+			if (resources.exists()) {
 
-			System.out.print("Suppression effectuee avec succes, lancement..." + "\n");
+				resources.delete();
+				System.out.println("Suppression de resources...");
+
+			}
+			else {
+				System.out.println("Dossier resources inexistant !");
+			}
+
+			System.out.println("Suppression effectuee avec succes, lancement...");
 
 		} catch (final Exception e) {
-			System.out.print("Echec de la suppression..." + "\n");
+			System.out.println("Echec de la suppression...");
 			e.printStackTrace();
 		}
 
