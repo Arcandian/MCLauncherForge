@@ -1,5 +1,3 @@
-[EN COURS DE REECRITURE]
-
 MCLauncher Forge Edition par Arcandian
 =================================================================================
 Projet original : https://github.com/Kokakiwi/MCLauncher
