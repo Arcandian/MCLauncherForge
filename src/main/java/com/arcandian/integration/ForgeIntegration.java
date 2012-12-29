@@ -12,9 +12,6 @@ public class ForgeIntegration {
 
 			final String mDir = api.getMinecraftDirectory().toString();
 			System.out.println(mDir);
-			final File natives = new File(mDir + File.separatorChar + "bin"
-					+ File.separatorChar + File.separatorChar + "natives"
-					+ File.separatorChar);
 			final File bin = new File(mDir + File.separatorChar + "bin"
 					+ File.separatorChar);
 			final File core = new File(mDir + File.separatorChar + "coremods"
@@ -29,13 +26,6 @@ public class ForgeIntegration {
 					+ File.separatorChar);
 			final File matmospath = new File(mDir + File.separatorChar
 					+ "matmos" + File.separatorChar);
-
-			if (natives.exists()) {
-
-				deleteFilesInDirectory(natives.getAbsolutePath().toString());
-				System.out.println("Suppression de natives...");
-
-			}
 
 			if (bin.exists()) {
 
