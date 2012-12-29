@@ -12,6 +12,11 @@ public class ForgeIntegration {
 
 			final String mDir = api.getMinecraftDirectory().toString();
 			System.out.println(mDir);
+			final File natives = new File(mDir + File.separatorChar + "bin"
+					+ File.separatorChar + File.separatorChar + "natives"
+					+ File.separatorChar);
+			final File bin = new File(mDir + File.separatorChar + "bin"
+					+ File.separatorChar);
 			final File core = new File(mDir + File.separatorChar + "coremods"
 					+ File.separatorChar);
 			final File mods = new File(mDir + File.separatorChar + "mods"
@@ -20,11 +25,27 @@ public class ForgeIntegration {
 					+ File.separatorChar);
 			final File resources = new File(mDir + File.separatorChar
 					+ "resources" + File.separatorChar);
+			final File flanpath = new File(mDir + File.separatorChar + "Flan"
+					+ File.separatorChar);
+			final File matmospath = new File(mDir + File.separatorChar
+					+ "matmos" + File.separatorChar);
+
+			if (natives.exists()) {
+
+				deleteFilesInDirectory(natives.getAbsolutePath().toString());
+				System.out.println("Suppression de natives...");
+
+			}
+
+			if (bin.exists()) {
+
+				deleteFilesInDirectory(bin.getAbsolutePath().toString());
+				System.out.println("Suppression de bin...");
+
+			}
 
 			if (core.exists()) {
 
-				System.out
-						.println("Installation avec FML detectee, nettoyage des dossiers avant MAJ...");
 				deleteFilesInDirectory(core.getAbsolutePath().toString());
 				System.out.println("Suppression de coremods...");
 
@@ -57,6 +78,24 @@ public class ForgeIntegration {
 				System.out.println("Dossier resources inexistant !");
 			}
 
+			if (flanpath.exists()) {
+
+				deleteFilesInDirectory(flanpath.getAbsolutePath().toString());
+				System.out.println("Suppression de Flan...");
+
+			} else {
+				System.out.println("Dossier Flan inexistant !");
+			}
+
+			if (matmospath.exists()) {
+
+				deleteFilesInDirectory(matmospath.getAbsolutePath().toString());
+				System.out.println("Suppression de matmos...");
+
+			} else {
+				System.out.println("Dossier matmos inexistant !");
+			}
+
 			System.out
 					.println("Suppression effectuee avec succes, lancement...");
 
@@ -74,7 +113,7 @@ public class ForgeIntegration {
 			File[] files = path.listFiles();
 			for (int i = 0; i < files.length; i++) {
 				if (files[i].isDirectory()) {
-					deleteFilesInDirectory(path + sep + files[i]);
+					deleteFilesInDirectory(path + sep + files[i] + sep);
 
 				}
 				files[i].delete();

@@ -15,8 +15,25 @@ import com.arcandian.integration.ForgeIntegration;
 
 public class UpdaterWorker
 {
+	
+	private static boolean isCleaned = false;
+	
     public static void update(LauncherAPI api)
     {
+    	
+    	try 
+    	{
+    		if (isCleaned == false) {
+    				
+    		ForgeIntegration.cleanMods(api);
+    		isCleaned = true;		
+    		}
+    			
+    	}
+    	catch (final Exception e)
+    	{
+    		e.printStackTrace();
+    	}
     	
         for (final GameFile file : api.getUpdater().getGameFiles())
         {
@@ -37,15 +54,6 @@ public class UpdaterWorker
         for (final GameFile file : api.getUpdater().getGameFiles())
         {
             api.getUpdater().setCurrentFile(file);
- 	
-    	try 
-    	{
-    		ForgeIntegration.cleanMods(api);
-    	}
-    	catch (final Exception e)
-    	{
-    		e.printStackTrace();
-    	}
             
             try
             {
