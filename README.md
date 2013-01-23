@@ -3,26 +3,11 @@ MCLauncher Forge Edition par Arcandian
 Projet original : https://github.com/Kokakiwi/MCLauncher
 
 Merci à Kokakiwi pour ce super Launcher !
-
-=================================================================================
-
-	NOTE A PROPOS DU BUG D'EXTRACTION DES ZIPS :
-	
-			Il arrive parfois que le launcher refuse d'extraire le fichier zip. Rassurez-vous,
-			ce n'est pas dû à une erreur de programmation, mais à un où plusieurs fichiers pouvant
-			être corrompus lors de la compression de l'archive. Voici mon conseil : si ce problème
-			survient, testez l'archive avec WinRAR, car il affiche un log console si une erreur survient
-			qui est plutôt parlante (Dans mon cas : "CRC match failed ! <fichier> file is corrupted", quelque
-			chose de ce genre). Si <fichier> est corrompu, je vous recommande de remplacer celui-ci
-			par l'original et de re-tester. Pour reprendre mon exemple, c'était un des fichiers de musique du
-			jeu original qui était corrompu. Alors, une fois remplacé, tout est revenu à la normale.
-			
-=================================================================================
+============================================================================
 		
 			A PROPOS :
 
-		Cette réedition rajoute principalement la gestion des dossiers générés de Forge API et de Forge Mod Loader,
-ainsi que par d'autres mods.
+		Cette réedition rajoute principalement la gestion des dossiers générés de Forge API et de Forge Mod Loader, ainsi que par d'autres mods.
 
 		Objectifs :
 
