@@ -45,10 +45,8 @@ public class ForgeIntegration {
 			for (int i = 0; i < files.length; i++) {
 
 				if (files[i].isDirectory()) {
-					
-					File subdir = new File(path + sep + files[i]);
-					
-					deleteDirectories(subdir);
+
+					deleteDirectories(files[i]);
 
 				}
 				
