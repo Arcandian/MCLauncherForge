@@ -36,8 +36,6 @@ public class ForgeIntegration {
 	static private void deleteDirectories(File file) {
 		
 		File path = new File(file.getPath());
-		
-		String sep = File.separator.toString();
 
 		if (path.exists()) {
 
