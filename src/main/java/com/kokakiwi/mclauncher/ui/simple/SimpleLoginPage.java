@@ -212,6 +212,17 @@ public class SimpleLoginPage implements Page
                                 api.getLoginer().getLastLogin().setTimestamp(0);
                                 api.getLoginer().getLastLogin()
                                         .setDownloadTicket("12345");
+                                if (rememberMe.isSelected())
+                                {
+                                    try
+                                    {
+                                        api.getLoginer().storeLogin(userName.getText(), "lolilol");
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        e.printStackTrace();
+                                    }
+                                }
                             }
                             
                             if (result == null)
