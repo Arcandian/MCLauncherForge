@@ -9,8 +9,7 @@ public class ForgeIntegration {
 	public static void cleanMods(LauncherAPI api) {
 
 		final char sep = File.separatorChar;
-		final String[] dirs = { "coremods", "mods", "config", "resources",
-				"Flan" };
+		final String[] dirs = { "coremods", "mods", "config" };
 		final String mDir = api.getMinecraftDirectory().toString();
 
 		try {
