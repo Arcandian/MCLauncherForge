@@ -17,7 +17,6 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -38,6 +37,7 @@ public class OptionsDialog extends JDialog {
 		addWindowListener(new WindowAdapter() {
 
 			public void windowClosing(WindowEvent event) {
+
 				setVisible(false);
 			}
 		});
@@ -175,18 +175,6 @@ public class OptionsDialog extends JDialog {
 		 * fieldPanel.add(modsButton);
 		 */
 		// @formatter:on
-
-		String[] ram_sizes = { "512", "1024", "2048", "4096" };
-
-		// RAM Allocators
-		JComboBox<String> min_ram = new JComboBox<String>(ram_sizes);
-		JComboBox<String> rec_ram = new JComboBox<String>(ram_sizes);
-		rec_ram.setSelectedIndex(1);
-
-		fieldPanel.add(min_ram);
-		labelPanel.add(new JLabel("Allocation RAM minimum :"));
-		fieldPanel.add(rec_ram);
-		labelPanel.add(new JLabel("Allocation RAM recommandee :"));
 
 		panel.add(optionsPanel, "Center");
 

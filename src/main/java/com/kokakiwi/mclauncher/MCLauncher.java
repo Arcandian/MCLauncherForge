@@ -71,6 +71,7 @@ public class MCLauncher
         loginer.init();
         
         parseArguments(args);
+
     }
     
     @SuppressWarnings("unchecked")
@@ -84,7 +85,6 @@ public class MCLauncher
             final Constructor<? extends Theme> constructor = clazz
                     .getConstructor();
             theme = constructor.newInstance();
-            
             System.out.println("Using custom theme '" + clazz.getSimpleName()
                     + "'...");
         }
@@ -203,15 +203,16 @@ public class MCLauncher
     {
         return instance;
     }
+
+    public final static long MIN_HEAP = 511 ;
     
-    public final static long MIN_HEAP         = 511;
-    
-    public final static long RECOMMENDED_HEAP = 1024;
+    public final static long RECOMMENDED_HEAP = 1024 ;
     
     public static void main(String[] args)
     {
         final float heapSizeMegs = Runtime.getRuntime().maxMemory() / 1024L / 1024L;
         boolean start = false;
+        
         if (heapSizeMegs > MIN_HEAP || !start)
         {
             start = true;
@@ -220,21 +221,24 @@ public class MCLauncher
         {
             try
             {
+
                 final String pathToJar = MCLauncher.class.getProtectionDomain()
                         .getCodeSource().getLocation().toURI().getPath();
                 
                 final ArrayList<String> params = new ArrayList<String>();
                 
                 params.add("javaw");
-                params.add("-Xmx" + Long.toString(RECOMMENDED_HEAP) + "m");
-                params.add("-Dsun.java2d.noddraw=true");
+                params.add("-Xms" + MIN_HEAP + "m");
+                params.add("-Xmx" + RECOMMENDED_HEAP + "m");
+                params.add("-Dsun.java2d.noddraw=false");
                 params.add("-Dsun.java2d.d3d=false");
-                params.add("-Dsun.java2d.opengl=false");
+                params.add("-Dsun.java2d.opengl=true");
                 params.add("-Dsun.java2d.pmoffscreen=false");
                 
                 params.add("-classpath");
                 params.add(pathToJar);
                 params.add("com.kokakiwi.mclauncher.MCLauncher");
+                
                 final ProcessBuilder pb = new ProcessBuilder(params);
                 final Process process = pb.start();
                 if (process == null)
@@ -253,6 +257,7 @@ public class MCLauncher
         if (start)
         {
             final MCLauncher main = new MCLauncher(args);
+            
             main.start();
         }
     }
